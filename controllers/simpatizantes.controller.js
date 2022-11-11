@@ -55,7 +55,7 @@ const simpatizantes_create = async (req,res) => {
         res.send(simpatizantes);
     })
     .catch((err)=> {
-        console.log(err);
+        res.status(400).json({ err: 'Registro Fallido' });
     })
 
 };
