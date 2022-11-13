@@ -59,7 +59,7 @@ router.post('/login', (req, res) =>loginController.user_login(req, res));
  *            required:
  *              - userName
  *              - pass
- *              - idpartido
+ *              - idcliente
  *            properties:
  *              userName:
  *                type: string
@@ -67,7 +67,7 @@ router.post('/login', (req, res) =>loginController.user_login(req, res));
  *              pass:
  *                type: string
  *                default: 1234
- *              idpartido:
+ *              idcliente:
  *                type: string
  *                default: P001
  *     responses:

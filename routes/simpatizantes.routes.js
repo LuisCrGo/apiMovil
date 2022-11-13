@@ -38,7 +38,8 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
  *              - facebook
  *              - instagram
  *              - otrared
- *              - cveseccion
+ *              - userName
+ *              - cvesec
  *            properties:
  *              cveElectoral:
  *                type: string
@@ -88,7 +89,10 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
  *              otrared:
  *                type: string
  *                default: S/C
- *              cveseccion:
+ *              userName:
+ *                type: string
+ *                default: abel.perez@afiliaccion.net
+ *              cvesec:
  *                type: string
  *                default: 1645
  *     responses:

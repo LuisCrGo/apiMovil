@@ -1,6 +1,7 @@
 import { getData } from "../config/connection.config.js";
 import { DataTypes } from 'sequelize';
 import bcrypt from "bcrypt";
+import { getSimpatizantes } from "./simpatizantes.js";
 
 
 const login = getData.sequelizeClient.define('login', {
@@ -14,7 +15,7 @@ const login = getData.sequelizeClient.define('login', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    idpartido: {
+    idcliente: {
         type: DataTypes.STRING,
         allowNull: false,
     }
@@ -28,5 +29,10 @@ const login = getData.sequelizeClient.define('login', {
      }
     }
 })
+
+login.hasMany(getSimpatizantes, {
+    foreignKey: 'userName'
+});
+// getSimpatizantes.belongsTo(login);
 
 export const getLogin = login;

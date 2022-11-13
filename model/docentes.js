@@ -8,7 +8,7 @@ const docente = getData.sequelizeClient.define('docente', {
         allowNull: false,
         primaryKey: true
     },
-    nombreDocente: {
+    nombre: {
         type: DataTypes.STRING,
         allowNull: false,
     },

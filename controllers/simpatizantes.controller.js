@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { dataEnv } from '../config/envData.js';
 import { getSimpatizantes } from '../model/simpatizantes.js';
+// import {}
 import bodyParser from "body-parser";
 
 const router = Router();
@@ -27,7 +28,8 @@ const simpatizantes_create = async (req,res) => {
     const facebook = req.body.facebook;
     const instagram = req.body.instagram;
     const otrared = req.body.otrared;
-    const cveseccion = req.body.cveseccion;
+    const cvesec = req.body.cvesec;
+    const userName = req.body.userName;
 
     getSimpatizantes.create ({
         cveElectoral,
@@ -46,11 +48,12 @@ const simpatizantes_create = async (req,res) => {
         facebook,
         instagram,
         otrared,
-        cveseccion,
+        userName,
+        cvesec,
     },
     {fields: ["cveElectoral", "curp", "nombre","apaterno","amaterno",
     "fecha_nac", "sexo", "domicilio","colonia","localidad",
-    "municipio", "estado", "numtelefono","facebook","instagram","otrared","cveseccion"]})
+    "municipio", "estado", "numtelefono","facebook","instagram","otrared","userName","cvesec"]})
     .then(simpatizantes => {
         res.send(simpatizantes);
     })

@@ -1,5 +1,6 @@
 import { getData } from "../config/connection.config.js";
 import { DataTypes } from 'sequelize';
+import { getLogin } from "./login.js";
 // import bcrypt from "bcrypt";
 
 
@@ -70,13 +71,15 @@ const simpatizantes = getData.sequelizeClient.define('simpatizantes', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    cveseccion: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
+    // cvesec: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    // },
 },
 {
     tableName: 'simpatizantes',
-})
+});
+
+
 
 export const getSimpatizantes = simpatizantes;

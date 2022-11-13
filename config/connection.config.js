@@ -8,6 +8,7 @@ const sequelizeClient = (() => {
                 host: db.host,
                 port: db.portdb,
                 dialect: 'mysql',
+                timezone:'-06:00',
             });
 
         case 'test':
