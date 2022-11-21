@@ -46,14 +46,20 @@ const user_login = async (req, res) => {
 const user_create = async (req,res) => {
     const userName = req.body.userName;
     const pass = req.body.pass;
+    const nombrelider = req.body.nombrelider;
+    const apaternolider = req.body.apaternolider;
+    const amaternolider = req.body.amaternolider;
     const idcliente = req.body.idcliente;
 
     getLogin.create ({
         userName,
         pass,
+        nombrelider,
+        apaternolider,
+        amaternolider,
         idcliente,
     },
-    {fields: ["userName", "pass", "idcliente"]})
+    {fields: ["userName", "pass","nombrelider","apaternolider","amaternolider", "idcliente"]})
     .then(login => {
         res.send(login);
     })

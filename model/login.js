@@ -15,6 +15,18 @@ const login = getData.sequelizeClient.define('login', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    nombrelider: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    apaternolider: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    amaternolider: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     idcliente: {
         type: DataTypes.STRING,
         allowNull: false,

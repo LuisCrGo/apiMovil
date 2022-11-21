@@ -59,14 +59,26 @@ router.post('/login', (req, res) =>loginController.user_login(req, res));
  *            required:
  *              - userName
  *              - pass
+ *              - nombrelider
+ *              - apaternolider
+ *              - amaternolider
  *              - idcliente
  *            properties:
  *              userName:
  *                type: string
- *                default: abel.perez@afiliaccion.net
+ *                default: luis.cruz@afiliaccion.net
  *              pass:
  *                type: string
  *                default: 1234
+ *              nombrelider:
+ *                type: string
+ *                default: Luis Daniel
+ *              apaternolider:
+ *                type: string
+ *                default: Cruz
+ *              amaternolider:
+ *                type: string
+ *                default: Gomez
  *              idcliente:
  *                type: string
  *                default: P001
