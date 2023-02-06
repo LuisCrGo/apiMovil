@@ -80,7 +80,7 @@ const simpatizantes_create = async (req,res) => {
 
 const simpatizantesSeccion_view = async (req,res) => {
     // console.log(req.query.nombre)
-    getSimpatizantes.findAll({ where: { nombre: req.query.nombre },
+    getSimpatizantes.findAll({ where: { cvesec: req.query.cvesec },
         attributes:['localidad','municipio','nombre','apaterno','amaterno','cvesec'] })
     
     .then(simpatizantes => {
