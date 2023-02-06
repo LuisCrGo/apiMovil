@@ -27,7 +27,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
  *            properties:
  *              userName:
  *                type: string
- *                default: abel.perez@afiliaccion.net
+ *                default: luis.cruz@afiliaccion.net
  *              pass:
  *                type: string
  *                default: 1234

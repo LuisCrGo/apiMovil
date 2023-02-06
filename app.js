@@ -4,7 +4,6 @@ import { api } from './config/Config.js';
 import swaggerDocs from './config/swagger.config.js';
 
 
-import docente from './routes/docente.routes.js';
 import login from './routes/login.routes.js';
 import simpatizantes from './routes/simpatizantes.routes.js';
 import seccion from './routes/seccion.routes.js';
@@ -21,7 +20,6 @@ app.use(express.json());
 // )
 
 
-app.use('/api/docente',docente);
 app.use('/api/login',login);
 app.use('/api/simpatizantes',simpatizantes);
 app.use('/api/seccion',seccion);

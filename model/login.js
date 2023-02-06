@@ -11,10 +11,6 @@ const login = getData.sequelizeClient.define('login', {
         allowNull: false,
         primaryKey: true
     },
-    pass: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
     nombrelider: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -27,10 +23,23 @@ const login = getData.sequelizeClient.define('login', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    direcclider: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    telefonolider: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    pass: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     idcliente: {
         type: DataTypes.STRING,
         allowNull: false,
-    }
+    },
+    
 },
 {
     tableName: 'login',
