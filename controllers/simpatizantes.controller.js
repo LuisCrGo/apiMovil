@@ -12,7 +12,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const simpatizantes_view = async (req,res) => {
     // console.log(req.query.nombre)
-    getSimpatizantes.findAll({ where: { nombre: req.query.nombre }})
+    getSimpatizantes.findAll({ where: { userName: req.query.userName }})
     
     .then(simpatizantes => {
         res.send(simpatizantes)
@@ -136,5 +136,18 @@ const simpatizantes_update = async (req,res) => {
 
 }
 
+const simpatizantes_viewAll = async (req,res) => {
+    getSimpatizantes.findAll({ attributes: ["cveElectoral", "curp", "nombre","apaterno","amaterno",
+    "fecha_nac", "sexo", "domicilio","colonia","localidad",
+    "municipio", "estado", "numtelefono","facebook","instagram","otrared","userName","cvesec","idcliente"]})
+    
+    .then(simpatizantes => {
+        res.send(simpatizantes)
+    })
+    .catch(err => {
+        res.status(400).json({ err: 'Error al hacer la consulta' });    
+    })
+}
 
-export const simpatizantesController = {simpatizantes_create, simpatizantes_view, simpatizantesSeccion_view, simpatizantes_delete, simpatizantes_update};
+
+export const simpatizantesController = {simpatizantes_create, simpatizantes_view, simpatizantesSeccion_view, simpatizantes_delete, simpatizantes_update,simpatizantes_viewAll};

@@ -109,37 +109,28 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
  router.post('/Screate', (req, res) => simpatizantesController.simpatizantes_create(req, res));
 
+
+router.get('/view', (req, res) => simpatizantesController.simpatizantes_view(req, res));
+
+router.get('/spc', (req,res) => simpatizantesController.simpatizantesSeccion_view(req,res));
+
 /**
  * @openapi
- * '/api/simpatizantes/view':
+ * '/api/simpatizantes/viewAll':
  *  get:
  *     tags:
  *     - simpatizantes
- *     summary: view
- *     requestBody:
- *      required: true
- *      content:
- *        application/json:
- *           schema:
- *            type: object
- *            required:
- *              - nombre
- *            properties:
- *              nombre:
- *                type: string
- *                default: Luis Daniel
+ *     summary: visualizar simpatizantes
  *     responses:
  *      200:
- *        description: Create
+ *        description: View
  *      400:
  *        description: Bad Request
  *      404:
  *        description: Not Found
  */
 
-router.get('/view', (req, res) => simpatizantesController.simpatizantes_view(req, res));
-
-router.get('/spc', (req,res) => simpatizantesController.simpatizantesSeccion_view(req,res));
+router.get('/viewAll', (req, res) => simpatizantesController.simpatizantes_viewAll(req, res));
 
 
 /**

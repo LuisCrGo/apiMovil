@@ -3,7 +3,11 @@ ApiRest de la aplicacion movil de afiliaccion
 RUTAS:
 
 GET{
-    //Visualizar Registro Completo
+
+    //Visualizar todos los registros completos
+    http://localhost:3000/api/simpatizantes/viewAll
+   
+    //Visualizar Simpatizantes por nombre de lider seccional
     http://localhost:3000/api/simpatizantes/view
 
     //Visualizar Registro Para el Primer Reporte (Simpatizantes Por Seccion)
@@ -13,6 +17,7 @@ GET{
 }
 
 POST{
+
     // Crear Registro de Simpatizante
     http://localhost:3000/api/simpatizantes/Screate
 
@@ -27,11 +32,15 @@ POST{
 }
 
 DELETE{
+
     //Eliminar Registro
     http://localhost:3000/api/simpatizantes/delete
+
 }
 
 UPDATE{
+
     //Actualizar Registro
     http://localhost:3000/api/simpatizantes/update
+    
 }
