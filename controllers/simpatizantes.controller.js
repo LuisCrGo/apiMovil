@@ -149,5 +149,31 @@ const simpatizantes_viewAll = async (req,res) => {
     })
 }
 
+const simpatizantesLider_view = async (req,res) => {
+    console.log(req.query.cvesec,req.query.userName)
+    getSimpatizantes.findAll({ where: { cvesec: req.query.cvesec ,userName: req.query.userName },
+        attributes:['cvesec','userName','cveElectoral','nombre','apaterno','amaterno','createdAT'] })
+    
+    .then(simpatizantes => {
+        res.send(simpatizantes)
+    })
+    .catch(err => {
+        res.status(400).json({ err: 'Error al hacer la consulta' });    
+    })
+}
 
-export const simpatizantesController = {simpatizantes_create, simpatizantes_view, simpatizantesSeccion_view, simpatizantes_delete, simpatizantes_update,simpatizantes_viewAll};
+const simpatizantesIneLider_view = async (req,res) => {
+    console.log(req.query.cvesec,req.query.userName)
+    getSimpatizantes.findAll({ where: { cvesec: req.query.cvesec ,userName: req.query.userName },
+        attributes:['cvesec','userName','cveElectoral','nombre','apaterno','amaterno','domicilio','municipio','localidad'] })
+    
+    .then(simpatizantes => {
+        res.send(simpatizantes)
+    })
+    .catch(err => {
+        res.status(400).json({ err: 'Error al hacer la consulta' });    
+    })
+}
+
+export const simpatizantesController = {simpatizantes_create, simpatizantes_view, simpatizantesSeccion_view, simpatizantes_delete, simpatizantes_update,
+    simpatizantes_viewAll,simpatizantesLider_view,simpatizantesIneLider_view};

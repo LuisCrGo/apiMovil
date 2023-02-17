@@ -114,6 +114,12 @@ router.get('/view', (req, res) => simpatizantesController.simpatizantes_view(req
 
 router.get('/spc', (req,res) => simpatizantesController.simpatizantesSeccion_view(req,res));
 
+router.get('/spl', (req,res) => simpatizantesController.simpatizantesLider_view(req,res));
+
+router.get('/spi', (req,res) => simpatizantesController.simpatizantesIneLider_view(req,res));
+
+
+
 /**
  * @openapi
  * '/api/simpatizantes/viewAll':

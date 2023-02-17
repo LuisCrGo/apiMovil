@@ -13,7 +13,14 @@ GET{
     //Visualizar Registro Para el Primer Reporte (Simpatizantes Por Seccion)
     http://localhost:3000/api/simpatizantes/spc
 
+    //Visualizar Registro Para el Segundo Reporte (Simpatizantes Por Lider Seccional)
+    http://localhost:3000/api/simpatizantes/spl
+
+    //Visualizar Registro Para el Tercer Reporte (Datos Ine por lider seccional)
+    http://localhost:3000/api/simpatizantes/spi
+
     (Estos Get se hacen con una consulta mediante Query, Estos Get no se vizualizan en Swagger, solo en Postman o RapidApi)
+
 }
 
 POST{
