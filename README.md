@@ -49,5 +49,9 @@ UPDATE{
 
     //Actualizar Registro
     http://localhost:3000/api/simpatizantes/update
+
+    //Actualizar Registro
+    http://localhost:3000/api/login/recovery
+    
     
 }
