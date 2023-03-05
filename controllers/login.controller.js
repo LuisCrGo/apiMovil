@@ -70,4 +70,17 @@ const user_create = async (req,res) => {
 };
 
 
-export const loginController = {user_login,user_create};
+const user_update = (req, res) => {
+    const userName = req.body.userName
+    getLogin.findOne({ where: { userName: userName } })
+        .then(login => {
+            login.update({ pass: bcryptjs.hashSync(req.body.pass, 10) })
+            res.status(200).json({ err: 'contraseña Actualizada' })
+        })
+        .catch((err) => {
+            res.status(400).json({ err: 'contraseña No Actualizado' })
+        });
+};
+
+
+export const loginController = {user_login,user_create,user_update};

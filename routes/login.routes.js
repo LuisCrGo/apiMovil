@@ -93,4 +93,38 @@ router.post('/login', (req, res) =>loginController.user_login(req, res));
 
 router.post('/create', (req, res) => loginController.user_create(req, res));
 
+/**
+ * @openapi
+ * '/api/login/recovery':
+ *  put:
+ *     tags:
+ *     - login
+ *     summary: update password
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *           schema:
+ *            type: object
+ *            required:
+ *              - userName
+ *              - pass
+ *            properties:
+ *              userName:
+ *                type: string
+ *                default: luis.cruz@afiliaccion.net
+ *              pass:
+ *                type: string
+ *                default: luis4321
+ *     responses:
+ *      200:
+ *        description: Create
+ *      400:
+ *        description: Bad Request
+ *      404:
+ *        description: Not Found
+ */
+
+router.put("/recovery", (req,res) => loginController.user_update(req,res));
+
 export default router;
